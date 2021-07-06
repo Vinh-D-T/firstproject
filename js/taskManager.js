@@ -8,7 +8,7 @@ const createTaskHTML = (Id, recipeName, ingredient, mealTime) =>{
                         <p class="card-text">Recipe For: ${mealTime}</p>
                         <div class="card-footer row b d-flex justify-content-end">
                                 <div class="col-6 d-flex justify-content-end">
-                                    <button class="btn btn-outline-success editBtn" type="button data-bs-toggle="modal" data-bs-target="#exampleModalAA">
+                                    <button class="btn btn-outline-success editBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalAA" id="editTaskButton">
                                         Edit
                                     </button>    
                                 </div>
