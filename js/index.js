@@ -83,7 +83,7 @@ function validFormInput (e) {
     }
     if (allPassed) {
           
-        taskManager.addTask(recipeName.value, ingredient.value, mealTime.value);
+        taskManager.addTask(recipeName.value, ingredient.value, mealType.value, description.value);
         taskManager.save();
         taskManager.render();
         clearFormInput();
@@ -178,7 +178,7 @@ function validFormInputEdit1 (e) {
         newingredientEdit;
         newmealTypeEdit;
         newdescriptionEdit;
-        //taskManager.addTask(recipeName.value, ingredient.value, mealTime.value);      
+        //taskManager.addTask(recipeName.value, ingredient.value, mealType.value, description.value);      
         // taskManager.save();
         // taskManager.render();
         clearFormInput();

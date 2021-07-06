@@ -1,11 +1,12 @@
 // Declare function createTaskHTML
-const createTaskHTML = (Id, recipeName, ingredient, mealTime) =>{
+const createTaskHTML = (Id, recipeName, ingredient, mealType, description) =>{
     const html = `
                 <li class="card aaaaa" data-task-id="${Id}">
                     <div class="card-body ">
                         <h6 class="card-title"><b>${recipeName}</b></h6>
                         <p class="card-text">${ingredient}</p>
-                        <p class="card-text">Recipe For: ${mealTime}</p>
+                        <p class="card-text">Recipe For: ${mealType}</p>
+                        <p class="card-text">Description: ${description}</p>
                         <div class="card-footer row b d-flex justify-content-end">
                                 <div class="col-6 d-flex justify-content-end">
                                     <button class="btn btn-outline-success editBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalAA"  id="editButton">
@@ -35,7 +36,7 @@ class RecipeManager{
             objectId: this.currentId++,
             recipeName: recipeName,
             ingredient: ingredient,
-            mealTime: mealType,
+            mealType: mealType,
             description: description,
         };
         this.tasks.push(recipeObject);
@@ -51,12 +52,12 @@ class RecipeManager{
             const task = this.tasks[i];
             const taskHtml = createTaskHTML (task.objectId, task.recipeName, task.ingredient, task.mealType, task.description);
                             
-                  if(task.mealTime === "Entree"){
+                  if(task.mealType === "Entree"){
                     //button.id.style.display="none";
                     recipeNameArray.push(taskHtml);             
-                    } else if(task.mealTime === "Main-Course") {
+                    } else if(task.mealType === "Main-Course") {
                         ingredientArray.push(taskHtml);
-                        } else if(task.mealTime === "Dessert") {
+                        } else if(task.mealType === "Dessert") {
                             mealTimeArray.push(taskHtml);
                         }
                         // else {
