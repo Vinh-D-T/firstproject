@@ -33,9 +33,14 @@ h1 {
   text-align: center;
  }
  .ToogleButton{
-  width: 80px;
+  width: 110px;
   height: 40px;
-  text-align: center;
+  text-align: left;
+ }
+ .ToogleButton:hover{
+  /* background-image: linear-gradient(to top, #a16d04 0%, #8d5e08 1%, #e6dee9 100%);  */
+  color: rgb(15, 199, 8);
+  font-weight: bold;
  }
   
 /* #addBtn{
