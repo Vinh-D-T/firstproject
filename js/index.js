@@ -91,7 +91,7 @@ function validFormInput (e) {
     
 e.preventDefault();
 }
-// start validate edit form here
+
 let recipeNameEdit = document.querySelector("#recipeNameEdit");
 let ingredientEdit = document.querySelector("#ingredientEdit");
 let mealTypeEdit = document.querySelector("#mealTypeEdit");
@@ -100,109 +100,53 @@ let errMsg1Edit = document.querySelector("#errMsg1Edit");
 let errMsg2Edit = document.querySelector("#errMsg2Edit");
 let errMsg3Edit = document.querySelector("#errMsg3Edit");
 let errMsg4Edit = document.querySelector("#errMsg4Edit");
-let editBtn = document.querySelector("#editBtn");
+let submitEdit = document.querySelector("#submitEdit");
 let newrecipeNameEdit;
 let newingredientEdit;
 let newmealTypeEdit;
 let newdescriptionEdit;
-editBtn.addEventListener("click", validFormInputEdit1 );
-
-function validFormInputEdit1 (e) {
-    var allPassedEdit = true;
-        
-    if(recipeNameEdit.value.trim() == "" || recipeNameEdit.value.length < 5){
-        errMsg1Edit.innerHTML = "Must be greater than 5 characters";
-        document.querySelector("#errMsg1Edit").style.color = "#ff0000";
-        recipeNameEdit.style.borderColor = "red";
-        recipeNameEdit.focus(); 
-        allPassedEdit = false;
-            }else {
-                errMsg1Edit.innerHTML = "Looks Good";
-                errMsg1Edit.style.color = "green";
-                recipeNameEdit.style.borderColor = "green";
-                // allPassed = true;
-            }
-    if(ingredientEdit.value.trim() == "" || ingredientEdit.value.length < 5){
-        errMsg2Edit.innerHTML = "Must be greater than 5 characters"
-        document.querySelector("#errMsg2Edit").style.color = "#ff0000"
-        ingredientEdit.style.borderColor = "red";
-        ingredientEdit.focus();
-        allPassedEdit = false;
-            }else {
-                errMsg2Edit.innerHTML = "Looks Good";
-                errMsg2Edit.style.color = "green";
-                ingredientEdit.style.borderColor = "green";
-                // allPassed = true;
-            }
-    if(mealTypeEdit.value.trim() == "" || mealTypEdit.value.length < 2){
-        errMsg3Edit.innerHTML = "Please select meal time";
-        document.querySelector("#errMsg3Edit").style.color = "#ff0000"
-        mealTypeEdit.style.borderColor = "red";
-        mealTypeEdit.focus();
-        allPassedEdit = false;
-            }else {
-                errMsg3Edit.innerHTML = "Looks Good";
-                errMsg3Edit.style.color = "green";
-                mealTypeEdit.style.borderColor = "green";
-                // allPassed = true;
-            }
-    if(descriptionEdit.value.trim() == "" || descriptionEdit.value.length < 5){
-       errMsg4Edit.innerHTML = "The Task Title must be greater than 5 characters"
-        document.querySelector("#errMsg4Edit").style.color = "#ff0000"
-        descriptionEdit.style.borderColor = "red";
-        descriptionEdit.focus();
-        allPassedEdit = false;
-            }else {
-                errMsg4Edit.innerHTML = "Looks Good";
-                errMsg4Edit.style.color = "green";
-                descriptionEdit.style.borderColor = "green";
-                // allPassed = true;
-            }                            
-            
-    const clearFormInput = () => {
-        recipeNameEdit.value="";
-        recipeNameEdit.style.borderColor = "grey"
-        ingredientEdit.value="";
-        ingredientEdit.style.borderColor = "grey"
-        mealTypeEdit.value="";
-        mealTypeEdit.style.borderColor = "grey"
-        description.value="";
-        description.style.borderColor = "grey"
-        errMsg1Edit.innerHTML = "";
-        errMsg2Edit.innerHTML = "";
-        errMsg3Edit.innerHTML = "";
-        errMsg4Edit.innerHTML = "";
-    }
-    if (allPassedEdit) {
-        newrecipeNameEdit;
-        newingredientEdit;
-        newmealTypeEdit;
-        newdescriptionEdit;
-        //taskManager.addTask(recipeName.value, ingredient.value, mealType.value, description.value);      
-        // taskManager.save();
-        // taskManager.render();
-        clearFormInput();
-    }
-    
-e.preventDefault();
-}
-// End validate edit form here
 
 // task-list01, task-list02, task-list03 is display at bottom of Webpage
+submitEdit.addEventListener("click", edit);
+// function edit(){
+//     if(newObjectId) {
+//         const taskId = Number(newObjectId);
+//         const taskB = taskManager.getTaskById(taskId);
+//         taskB.recipeName = recipeNameEdit.value;
+//         taskB.ingredient = ingredientEdit.value;
+//         taskB.mealType = mealTypeEdit.value;
+//         taskB.description = descriptionEdit;  
+//     } else {
+//         console.log("you made a mistake");
+//     }
+// }
+
+function edit() {
+    taskA.recipeName = recipeNameEdit.value;
+    taskA.ingredient = ingredientEdit.value;
+    taskA.mealType = mealTypeEdit.value;
+    taskA.description = descriptionEdit.value;
+    taskManager.save();
+    taskManager.render();
+    
+}
+    
 const taskList01 = document.querySelector("#task-list01");
 taskList01.addEventListener("click", (event) => {
     if (event.target.classList.contains("editBtn")){
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
         const taskId = Number(parentTask.dataset.taskId);
-        const taskA = taskManager.getTaskById(taskId);
-        //taskA.
-        // taskA.Status = "Done";       
-        taskManager.save();
-        taskManager.render();
-        //console.log(Number(event.target.id));
-        //console.log(Number(taskId)); 
-     }
-    
+        taskA = taskManager.getTaskById(taskId);
+        recipeNameEdit.value = taskA.recipeName;
+        ingredientEdit.value = taskA.ingredient;
+        mealTypeEdit.value = taskA.mealType;
+        descriptionEdit.value = taskA.description;
+        newObjectId = taskA.objectId;
+        console.log(newObjectId);
+       // console.log(taskA)
+        
+     } 
+     
      if (event.target.classList.contains("deleteBtn")) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
@@ -222,13 +166,13 @@ taskList01.addEventListener("click", (event) => {
         if (event.target.classList.contains("editBtn")){
             const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
-            const taskA = taskManager.getTaskById(taskId);
-            // const taskA = taskManager.getTaskById(taskId);
-            // taskA.Status = "Done";       
-            taskManager.save();
-            taskManager.render();
-            //console.log(Number(event.target.id));
-            //console.log(Number(taskId)); 
+            taskA = taskManager.getTaskById(taskId);
+            recipeNameEdit.value = taskA.recipeName;
+            ingredientEdit.value = taskA.ingredient;
+            mealTypeEdit.value = taskA.mealType;
+            descriptionEdit.value = taskA.description;
+            newObjectId = taskA.objectId;  
+            console.log(newObjectId); 
          }
         
          if (event.target.classList.contains("deleteBtn")) {
@@ -250,15 +194,16 @@ taskList01.addEventListener("click", (event) => {
             if (event.target.classList.contains("editBtn")){
                 const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
                 const taskId = Number(parentTask.dataset.taskId);
-                const taskA = taskManager.getTaskById(taskId);
-                
+                taskA = taskManager.getTaskById(taskId);
+                recipeNameEdit.value = taskA.recipeName;
+                ingredientEdit.value = taskA.ingredient;
+                mealTypeEdit.value = taskA.mealType;
+                descriptionEdit.value = taskA.description;
+                newObjectId = taskA.objectId;
                 // taskA.Status = "Done";       
-                taskManager.save();
-                taskManager.render();
-                //console.log(Number(event.target.id));
-                //console.log(Number(taskId)); 
-             }
-            
+                // taskManager.save();
+                // taskManager.render();
+            }
              if (event.target.classList.contains("deleteBtn")) {
                 // Get the parent Task
                 const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
@@ -279,14 +224,14 @@ taskList1.addEventListener("click",(event) => {
     if (event.target.classList.contains("editBtn")){
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
         const taskId = Number(parentTask.dataset.taskId);
-        const taskA = taskManager.getTaskById(taskId);
-
+        taskA = taskManager.getTaskById(taskId);
+        recipeNameEdit.value = taskA.recipeName;
+        ingredientEdit.value = taskA.ingredient;
+        mealTypeEdit.value = taskA.mealType;
+        descriptionEdit.value = taskA.description;
+        newObjectId = taskA.objectId;
         
-        // taskA.Status = "Done";       
-        taskManager.save();
-        taskManager.render();
-        //console.log(Number(event.target.id));
-        //console.log(Number(taskId)); 
+    
      }
     
      if (event.target.classList.contains("deleteBtn")) {
@@ -308,12 +253,16 @@ taskList1.addEventListener("click",(event) => {
         if (event.target.classList.contains("editBtn")){
             const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
             const taskId = Number(parentTask.dataset.taskId);
-            const taskA = taskManager.getTaskById(taskId);
-
+            taskA = taskManager.getTaskById(taskId);
+            recipeNameEdit.value = taskA.recipeName;
+            ingredientEdit.value = taskA.ingredient;
+            mealTypeEdit.value = taskA.mealType;
+            descriptionEdit.value = taskA.description;
+            newObjectId = taskA.objectId;
           
             // taskA.Status = "Done";       
-            taskManager.save();
-            taskManager.render();
+            // taskManager.save();
+            // taskManager.render();
          }
         
          if (event.target.classList.contains("deleteBtn")) {
@@ -336,12 +285,15 @@ taskList1.addEventListener("click",(event) => {
             if (event.target.classList.contains("editBtn")){
                 const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
                 const taskId = Number(parentTask.dataset.taskId);
-                const taskA = taskManager.getTaskById(taskId);
-
-              
+                taskA = taskManager.getTaskById(taskId);
+                recipeNameEdit.value = taskA.recipeName;
+                ingredientEdit.value = taskA.ingredient;
+                mealTypeEdit.value = taskA.mealType;
+                descriptionEdit.value = taskA.description;
+                newObjectId = taskA.objectId;
                 // taskA.Status = "Done";       
-                taskManager.save();
-                taskManager.render();
+                // taskManager.save();
+                // taskManager.render();
             }
              if (event.target.classList.contains("deleteBtn")) {
                 // Get the parent Task
@@ -358,3 +310,86 @@ taskList1.addEventListener("click",(event) => {
                     taskManager.render();
               }
             });
+
+            // editBtn.addEventListener("click", validFormInputEdit1);
+
+// function validFormInputEdit1 (e) {
+//     var allPassedEdit = true;
+        
+//     if(recipeNameEdit.value.trim() == "" || recipeNameEdit.value.length < 5){
+//         errMsg1Edit.innerHTML = "Must be greater than 5 characters";
+//         document.querySelector("#errMsg1Edit").style.color = "#ff0000";
+//         recipeNameEdit.style.borderColor = "red";
+//         recipeNameEdit.focus(); 
+//         allPassedEdit = false;
+//             }else {
+//                 errMsg1Edit.innerHTML = "Looks Good";
+//                 errMsg1Edit.style.color = "green";
+//                 recipeNameEdit.style.borderColor = "green";
+//                 // allPassed = true;
+//             }
+//     if(ingredientEdit.value.trim() == "" || ingredientEdit.value.length < 5){
+//         errMsg2Edit.innerHTML = "Must be greater than 5 characters"
+//         document.querySelector("#errMsg2Edit").style.color = "#ff0000"
+//         ingredientEdit.style.borderColor = "red";
+//         ingredientEdit.focus();
+//         allPassedEdit = false;
+//             }else {
+//                 errMsg2Edit.innerHTML = "Looks Good";
+//                 errMsg2Edit.style.color = "green";
+//                 ingredientEdit.style.borderColor = "green";
+//                 // allPassed = true;
+//             }
+//     if(mealTypeEdit.value.trim() == "" || mealTypeEdit.value.length < 2){
+//         errMsg3Edit.innerHTML = "Please select meal time";
+//         document.querySelector("#errMsg3Edit").style.color = "#ff0000"
+//         mealTypeEdit.style.borderColor = "red";
+//         mealTypeEdit.focus();
+//         allPassedEdit = false;
+//             }else {
+//                 errMsg3Edit.innerHTML = "Looks Good";
+//                 errMsg3Edit.style.color = "green";
+//                 mealTypeEdit.style.borderColor = "green";
+//                 // allPassed = true;
+//             }
+//     if(descriptionEdit.value.trim() == "" || descriptionEdit.value.length < 5){
+//        errMsg4Edit.innerHTML = "The Task Title must be greater than 5 characters"
+//         document.querySelector("#errMsg4Edit").style.color = "#ff0000"
+//         descriptionEdit.style.borderColor = "red";
+//         descriptionEdit.focus();
+//         allPassedEdit = false;
+//             }else {
+//                 errMsg4Edit.innerHTML = "Looks Good";
+//                 errMsg4Edit.style.color = "green";
+//                 descriptionEdit.style.borderColor = "green";
+//                 // allPassed = true;
+//             }                            
+            
+//     const clearFormInput1 = () => {
+//         recipeNameEdit.value="";
+//         recipeNameEdit.style.borderColor = "grey"
+//         ingredientEdit.value="";
+//         ingredientEdit.style.borderColor = "grey"
+//         mealTypeEdit.value="";
+//         mealTypeEdit.style.borderColor = "grey"
+//         descriptionEdit.value="";
+//         descriptionEdit.style.borderColor = "grey"
+//         errMsg1Edit.innerHTML = "";
+//         errMsg2Edit.innerHTML = "";
+//         errMsg3Edit.innerHTML = "";
+//         errMsg4Edit.innerHTML = "";
+//     }
+//     if (allPassedEdit) {
+//         taskA.recipeName = recipeNameEdit.value;
+//         taskA.ingredient = ingredientEdit.value;
+//         taskA.mealType = mealTypeEdit.value;
+//         taskA.description = descriptionEdit.value;
+//         // taskManager.addTask(newrecipeNameEdit, newingredientEdit, newmealTypeEdit, newdescriptionEdit);      
+//         // taskManager.save();
+//         // taskManager.render();
+//         clearFormInput1();
+//     }
+    
+// e.preventDefault();
+// }
+// End validate edit form here
