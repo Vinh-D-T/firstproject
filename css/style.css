@@ -1,6 +1,9 @@
 body{
   background-color: rgb(227, 228, 224);
 }
+.editContainer{
+  background-color: rgb(249, 252, 252);
+}
 h1 {
   color: #090a3f;
   /* margin-bottom: 50px; */
@@ -9,7 +12,6 @@ h1 {
   
 }
 #hearderA {
-  
   color: #090a3f;
   /* margin-top: 50px; */
   text-align: center;
@@ -20,7 +22,7 @@ h1 {
 .form1{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.a{
+.fooImage{
   background-image: url('../images/recipe1.jpg');
   /* background-repeat: no-repeat; */
 }
@@ -33,7 +35,7 @@ h1 {
   text-align: center;
  }
  .ToogleButton{
-  width: 110px;
+  width: 130px;
   height: 40px;
   text-align: left;
  }
@@ -46,7 +48,7 @@ h1 {
 /* #addBtn{
    
 } */
-.buttonBorder {
+.inputBorder {
   border-color: #111499;
 }
 

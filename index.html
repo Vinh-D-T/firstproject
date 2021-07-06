@@ -13,45 +13,46 @@
 
 <body>
   <!-- Edit Modal start here  -->
-<!-- <div class="modal fade" id="exampleModalAA" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalAA" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
+    <div class="modal-content editContainer">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">Edit Your Recipe</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row b d-flex flex-column align-items-center" >
-                          
-          <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
-                <label class="form-label" for="recipeName" ><h6>Recipe Name:</h6></label>
-                <input class="form-control buttonBorder" type="text" id="recipeNameEdit" name="recipeName" required>
-                <span id="errMsg1" class="msg1"></span>
-                </div>
-                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
-                <label class="form-label me-3 " for="ingredient"><h6>Enter Ingredients:</h6></label>
-                <input class="form-control buttonBorder" type="text" id="ingredientEdit" required>
-                <span id="errMsg2"></span>
-          </div>
-          <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
-                <label class="form-label " for="mealTime"><h6>This Recipe For:</h6></label>  
-                <select class="form-select buttonBorder" aria-label="meal" id="mealTimeEdit">
-                <option value="">Select Meal Type</option>
-                <option value="Entree">Entree</option>
-                <option value="Main-Course">Main-Course</option>
-                <option value="Dessert">Dessert</option>
-                </select>
-                <span id="errMsg3"></span>
-        </div>
-        <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
-                <label class="form-label me-3 " for="ingredient"><h6>Decription:</h6></label>
-                <input class="form-control buttonBorder" type="text" id="decriptionEdit" required>
-                <span id="errMsg4"></span>
-        </div>
-        <div class="col mb-4 col-sm-12 col-lg-10 d-flex justify-content-end">
-          <button class="btn btn-outline-primary" type="submit" id="addBtn">Add Recipe</button>
-        </div>
-</div>
+        <form id="editForm">
+              <div class="row b d-flex flex-column align-items-center" >               
+                    <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
+                          <label class="form-label" for="recipeNameEdit" ><h6>Recipe Name:</h6></label>
+                          <input class="form-control inputBorder" type="text" id="recipeNameEdit" name="recipeNameEdit" required>
+                          <span id="errMsg1Edit" class="msg1"></span>
+                          </div>
+                          <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                          <label class="form-label me-3 " for="ingredientEdit"><h6>Enter Ingredients:</h6></label>
+                          <input class="form-control inputBorder" type="text" id="ingredientEdit" required>
+                          <span id="errMsg2Edit"></span>
+                    </div>
+                    <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                          <label class="form-label " for="mealTimeEdit"><h6>This Recipe For:</h6></label>  
+                          <select class="form-select inputBorder" aria-label="meal" id="mealTypeEdit">
+                          <option value="">Select Meal Type</option>
+                          <option value="Entree">Entree</option>
+                          <option value="Main-Course">Main-Course</option>
+                          <option value="Dessert">Dessert</option>
+                          </select>
+                          <span id="errMsg3Edit"></span>
+                  </div>
+                  <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                          <label class="form-label me-3 " for="descriptionEdit"><h6>Decription:</h6></label>
+                          <input class="form-control inputBorder" type="text" id="descriptionEdit" required>
+                          <span id="errMsg4Edit"></span>
+                  </div>
+                  <div class="col mb-4 col-sm-12 col-lg-10 d-flex justify-content-end">
+                    <button class="btn btn-outline-primary" type="submit" id="editBtn">Submit Edit</button>
+                  </div>
+            </div>
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -59,17 +60,9 @@
       </div>
     </div>
   </div>
-</div> -->
+</div>
 
-  <!-- Edit Modal end here  -->
-  <!-- <div class="row" id="hearderA">
-    
-    <div class="heading" >
-        <h1>Recipe Maker</h1>
-    </div>
-</div>   -->
-
-<!-- Modal task breakfast start here -->
+<!-- Modal ENTREE start here -->
 <div class="modal fade col" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content modalDisplay">
@@ -88,17 +81,17 @@
     </div>
   </div>
 </div>
-<!-- Modal end here --> 
-<!-- Modal task ingredient status start here -->
-<div class="modal fade " id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- End Modal entree  here --> 
+<!-- Modal MAIN COURSE status start here -->
+<div class="modal fade modal1" id="staticBackdrop2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content modalDisplay">
       <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel" style="color: rgb(58, 3, 3);">Recipe For Main Course</h5>
+        <h5 class="modal-title " id="staticBackdropLabel" style="color: rgb(58, 3, 3);">Recipe For Main Course</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div> 
+        <div>
           <ul class="list-group" id="task-list2"> </ul>
         </div>
       </div>
@@ -108,8 +101,8 @@
     </div>
   </div>
 </div>
-<!--Modal end here -->
-<!-- Modal task dinners start here -->
+<!--End modal main course here -->
+<!-- Modal DESSERT start here -->
 <div class="modal fade " id="staticBackdrop3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content modalDisplay">
@@ -128,75 +121,73 @@
     </div>
   </div>
 </div>
-<!-- Modal end here -->
- <!-- start col 3 -->
-                   <!-- collapse navbar end here -->
+<!-- End Modal dessert here -->                                               
  <form id="new-task-form">                 
-  <div class="container mainContainer justify-content-center mt">
-    <div class="row mainRow1">
-    </div> 
-    <!-- collapse menu start here -->
-    <div class="row">
-      <nav class="navbar navbar-expand-lg navbar-light collapeButton">
-        <div class="container-fluid ">
-          <a class="navbar-brand" href="#"></a>
-          <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a  ref="#" class="ToogleButton btn" data-bs-toggle="modal"  id="Home">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" id="Contact">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" id="AboutMme">About me</a>
-              </li>
-              <li class="nav-item">
-                <a  ref="#" class="ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" id="entree">Entree</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" id="mainCourse">Main</a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop3" id="dessert">Dessert</a>
-              </li>
-            </ul>
-            <form class="d-flex searchA">
-              <div class="d-inline-flex ms-1">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
+  <div class="container mainContainer justify-content-center">
+              <div class="row mainRow1">
+              </div> 
+    <!-- Navigaton and collapse menu start here -->
+              <div class="row maniRow2 mt-5">
+                <nav class="navbar navbar-expand-lg navbar-light collapeButton">
+                  <div class="container-fluid ">
+                    <a class="navbar-brand" href="#"></a>
+                    <button  class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                      <ul class="navbar-nav">
+                        <li class="nav-item">
+                          <a  ref="#" class="ToogleButton btn" data-bs-toggle="modal"  id="Home">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="ToogleButton btn" data-bs-toggle="modal" id="Contact">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class="ToogleButton btn" data-bs-toggle="modal" id="AboutMme">About me</a>
+                        </li>
+                        <li class="nav-item">
+                          <a  ref="#" class="ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" id="entree">Entree</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" id="dessert">Main Course</a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop3" id="dessert">Dessert</a>
+                        </li>
+                      </ul>
+                      <form class="d-flex searchA">
+                        <div class="d-inline-flex ms-1">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </nav>
               </div>
-            </form>
-          </div>
-        </div>
-      </nav>
-    </div>
     <!-- Collapse menu end here -->
-    <div class="row mainRow2" id="hearderA">
+    <div class="row mainRow3" id="hearderA">
       <div class=" col heading" >
           <h1>Recipe Maker</h1>
       </div>
   </div>  
-  <div class="row mainRow3 ">
-                <div class="col modalDisplay " >
+  <div class="row mainRow4 ">
+                <div class="col modalDisplay  col_with_2_row_of_inputForm_and_foodImage">
                     <div class="row b d-flex flex-column align-items-center" >
                           
                                 <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
                                       <label class="form-label" for="recipeName" ><h6>Recipe Name:</h6></label>
-                                      <input class="form-control buttonBorder" type="text" id="recipeName" name="recipeName" required>
+                                      <input class="form-control inputBorder" type="text" id="recipeName" name="recipeName" required>
                                       <span id="errMsg1" class="msg1"></span>
                                       </div>
                                       <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
                                       <label class="form-label me-3 " for="ingredient"><h6>Enter Ingredients:</h6></label>
-                                      <input class="form-control buttonBorder" type="text" id="ingredient" required>
+                                      <input class="form-control inputBorder" type="text" id="ingredient" required>
                                       <span id="errMsg2"></span>
                                 </div>
                                 <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
                                       <label class="form-label " for="mealTime"><h6>This Recipe For:</h6></label>  
-                                      <select class="form-select buttonBorder" aria-label="meal" id="mealTime">
+                                      <select class="form-select inputBorder" aria-label="meal" id="mealType">
                                       <option value="">Select Meal Type</option>
                                       <option value="Entree">Entree</option>
                                       <option value="Main-Course">Main-Course</option>
@@ -206,27 +197,25 @@
                               </div>
                               <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
                                       <label class="form-label me-3 " for="ingredient"><h6>Decription:</h6></label>
-                                      <input class="form-control buttonBorder" type="text" id="decription" required>
+                                      <input class="form-control inputBorder" type="text" id="description" required>
                                       <span id="errMsg4"></span>
                               </div>
                               <div class="col mb-4 col-sm-12 col-lg-10 d-flex justify-content-end">
                                 <button class="btn btn-outline-primary" type="submit" id="addBtn">Add Recipe</button>
                               </div>
                       </div>
-                    </div>
-                    <div class="col-8 a">
+                </div>
+                <div class="col-8 fooImage col2_of_mainRow4 background_image_here">
                           <div class="row">
                             <div class="col image1 mt-2 mb-2" id="schedule" >
-                                  <div class="row">
-                                      
+                                  <div class="row">   
                                   </div>     
                             </div>
                           </div> 
-                    </div>               
-                  </div>
-                    
-              </div> 
-            </form>
+                </div>               
+          </div>
+      </div> 
+      </form>
           <div class="container col2_MainRow mt- filterButton " style="background-color: rgb(245, 250, 250);">
                   
                         <div class="row d-flex">

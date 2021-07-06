@@ -30,12 +30,13 @@ class RecipeManager{
         this.currentId = currentId;
     }
     // addTask method of TaskManager class
-    addTask(recipeName, ingredient, mealTime) {
+    addTask(recipeName, ingredient, mealType, description) {
         const recipeObject = {
             objectId: this.currentId++,
             recipeName: recipeName,
             ingredient: ingredient,
-            mealTime: mealTime,
+            mealTime: mealType,
+            description: description,
         };
         this.tasks.push(recipeObject);
         console.log(this.tasks)
@@ -48,7 +49,7 @@ class RecipeManager{
         const mealTimeArray = [];
         for (let i=0; i<this.tasks.length; i++){
             const task = this.tasks[i];
-            const taskHtml = createTaskHTML (task.objectId, task.recipeName, task.ingredient, task.mealTime);
+            const taskHtml = createTaskHTML (task.objectId, task.recipeName, task.ingredient, task.mealType, task.description);
                             
                   if(task.mealTime === "Entree"){
                     //button.id.style.display="none";
