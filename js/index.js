@@ -80,7 +80,12 @@ function validFormInput (e) {
     
 e.preventDefault();
 }
-
+// close a modal from w3school
+// window.onclick = function(event) {
+//     if (event.target == modal) {
+//         modal.style.display = "none";
+//     }
+// }
 // Get the Id of individual task
 const taskList01 = document.querySelector("#task-list01");
 taskList01.addEventListener("click", (event) => {

@@ -15,13 +15,7 @@
   
 
   <!-- Edit Modal start here  -->
-  <!-- Button trigger modal -->
-<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModalAA">
-  Launch demo modal
-</button> -->
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModalAA" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModalAA" tabindex="-2" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -29,7 +23,37 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        ...
+        <div class="row b d-flex flex-column align-items-center" >
+                          
+          <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
+                <label class="form-label" for="recipeName" ><h6>Recipe Name:</h6></label>
+                <input class="form-control buttonBorder" type="text" id="recipeName" name="recipeName" required>
+                <span id="errMsg1" class="msg1"></span>
+                </div>
+                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                <label class="form-label me-3 " for="ingredient"><h6>Enter Ingredients:</h6></label>
+                <input class="form-control buttonBorder" type="text" id="ingredient" required>
+                <span id="errMsg2"></span>
+          </div>
+          <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                <label class="form-label " for="mealTime"><h6>This Recipe For:</h6></label>  
+                <select class="form-select buttonBorder" aria-label="meal" id="mealTime">
+                <option value="">Select Meal Type</option>
+                <option value="Entree">Entree</option>
+                <option value="Main-Course">Main-Course</option>
+                <option value="Dessert">Dessert</option>
+                </select>
+                <span id="errMsg3"></span>
+        </div>
+        <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                <label class="form-label me-3 " for="ingredient"><h6>Decription:</h6></label>
+                <input class="form-control buttonBorder" type="text" id="decription" required>
+                <span id="errMsg4"></span>
+        </div>
+        <div class="col mb-4 col-sm-12 col-lg-10 d-flex justify-content-end">
+          <button class="btn btn-outline-primary" type="submit" id="addBtn">Add Recipe</button>
+        </div>
+</div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -161,44 +185,36 @@
   <div class="row mainRow3 ">
                 <div class="col modalDisplay " >
                     <div class="row b d-flex flex-column align-items-center" >
-                            <!-- <div class="row mt-3 d-flex"> -->
-                                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
-                                <label class="form-label" for="recipeName" ><h6>Recipe Name:</h6></label>
-                                <input class="form-control buttonBorder" type="text" id="recipeName" name="recipeName" required>
-                                <span id="errMsg1" class="msg1"></span>
-                                </div>
-                            <!-- </div>  -->
-                            <!-- <div class="row mt-3 d-flex"> -->
-                                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
-                                <label class="form-label me-3 " for="ingredient"><h6>Enter Ingredients:</h6></label>
-                                <input class="form-control buttonBorder" type="text" id="ingredient" required>
-                                <span id="errMsg2"></span>
-                              </div>
-                         
-                            <!-- <div class="row mt-3 d-flex"> -->
-                                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
-                                  <label class="form-label " for="mealTime"><h6>This Recipe For:</h6></label>  
-                                  <select class="form-select buttonBorder" aria-label="meal" id="mealTime">
-                                  <option value="">Select Meal Type</option>
-                                  <option value="Entree">Entree</option>
-                                  <option value="Main-Course">Main-Course</option>
-                                  <option value="Dessert">Dessert</option>
-                                </select>
-                                <span id="errMsg3"></span>
-                              </div>
-                           
-                            
-                                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
-                                <label class="form-label me-3 " for="ingredient"><h6>Decription:</h6></label>
-                                <input class="form-control buttonBorder" type="text" id="decription" required>
-                                <span id="errMsg2"></span>
-                              </div>
                           
+                                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
+                                      <label class="form-label" for="recipeName" ><h6>Recipe Name:</h6></label>
+                                      <input class="form-control buttonBorder" type="text" id="recipeName" name="recipeName" required>
+                                      <span id="errMsg1" class="msg1"></span>
+                                      </div>
+                                      <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                                      <label class="form-label me-3 " for="ingredient"><h6>Enter Ingredients:</h6></label>
+                                      <input class="form-control buttonBorder" type="text" id="ingredient" required>
+                                      <span id="errMsg2"></span>
+                                </div>
+                                <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                                      <label class="form-label " for="mealTime"><h6>This Recipe For:</h6></label>  
+                                      <select class="form-select buttonBorder" aria-label="meal" id="mealTime">
+                                      <option value="">Select Meal Type</option>
+                                      <option value="Entree">Entree</option>
+                                      <option value="Main-Course">Main-Course</option>
+                                      <option value="Dessert">Dessert</option>
+                                      </select>
+                                      <span id="errMsg3"></span>
+                              </div>
+                              <div class="col mb-4 col-sm-12 col-md-12 col-lg-10">
+                                      <label class="form-label me-3 " for="ingredient"><h6>Decription:</h6></label>
+                                      <input class="form-control buttonBorder" type="text" id="decription" required>
+                                      <span id="errMsg4"></span>
+                              </div>
                               <div class="col mb-4 col-sm-12 col-lg-10 d-flex justify-content-end">
                                 <button class="btn btn-outline-primary" type="submit" id="addBtn">Add Recipe</button>
                               </div>
-                            <!-- </div> -->
-                    </div>
+                      </div>
                     </div>
                     <div class="col-8 a">
                           <div class="row">

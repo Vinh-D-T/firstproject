@@ -1,14 +1,14 @@
 // Declare function createTaskHTML
 const createTaskHTML = (Id, recipeName, ingredient, mealTime) =>{
     const html = `
-                <li class="card " data-task-id="${Id}">
+                <li class="card aaaaa" data-task-id="${Id}">
                     <div class="card-body ">
                         <h6 class="card-title"><b>${recipeName}</b></h6>
                         <p class="card-text">${ingredient}</p>
                         <p class="card-text">Recipe For: ${mealTime}</p>
                         <div class="card-footer row b d-flex justify-content-end">
                                 <div class="col-6 d-flex justify-content-end">
-                                    <button class="btn btn-outline-success editBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalAA" id="editTaskButton">
+                                    <button class="btn btn-outline-success editBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalAA"  id="editButton">
                                         Edit
                                     </button>    
                                 </div>
