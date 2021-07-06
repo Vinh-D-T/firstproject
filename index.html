@@ -22,7 +22,7 @@
       </div>
       <div class="modal-body">
         <form id="editForm">
-              <div class="row b d-flex flex-column align-items-center" >               
+              <div class="row formBackGround d-flex flex-column align-items-center" >               
                     <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
                           <label class="form-label" for="recipeNameEdit" ><h6>Recipe Name:</h6></label>
                           <input class="form-control inputBorder" type="text" id="recipeNameEdit" name="recipeNameEdit" required>
@@ -56,7 +56,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-       
       </div>
     </div>
   </div>
@@ -121,12 +120,12 @@
     </div>
   </div>
 </div>
-<!-- End Modal dessert here -->                                               
-                  
+<!-- End Modal dessert here --> 
+<!-- Start Main container-->
   <div class="container mainContainer justify-content-center">
               <div class="row mainRow1">
               </div> 
-    <!-- Navigaton and collapse menu start here -->
+              <!-- Navigaton and collapse menu start here -->
               <div class="row maniRow2 mt-5">
                 <nav class="navbar navbar-expand-lg navbar-light collapeButton">
                   <div class="container-fluid ">
@@ -140,12 +139,6 @@
                           <a  ref="#" class="ToogleButton btn" data-bs-toggle="modal"  id="Home">Home</a>
                         </li>
                         <li class="nav-item">
-                          <a href="#" class="ToogleButton btn" data-bs-toggle="modal" id="Contact">Contact</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="#" class="ToogleButton btn" data-bs-toggle="modal" id="AboutMme">About me</a>
-                        </li>
-                        <li class="nav-item">
                           <a  ref="#" class="ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" id="entree">Entree</a>
                         </li>
                         <li class="nav-item">
@@ -155,8 +148,8 @@
                           <a href="#" class=" ToogleButton btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop3" id="dessert">Dessert</a>
                         </li>
                       </ul>
-                      <form class="d-flex searchA">
-                        <div class="d-inline-flex ms-1">
+                      <form class="d-flex justify-content-end searchA">
+                        <div class="d-inline-flex ms-1 d-flex justify-content-end">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
                         </div>
@@ -173,9 +166,8 @@
   </div>  
   <form id="new-task-form"></form>
   <div class="row mainRow4 ">
-                <div class="col modalDisplay  col_with_2_row_of_inputForm_and_foodImage">
-                    <div class="row b d-flex flex-column align-items-center" >
-                          
+                <div class="col modalDisplay col_with_2_row_of_inputForm_and_foodImage">
+                    <div class="row formBackGround d-flex flex-column align-items-center" >
                                 <div class="col mb-4 col-sm-12 col-md-12 col-lg-10 mt-">
                                       <label class="form-label" for="recipeName" ><h6>Recipe Name:</h6></label>
                                       <input class="form-control inputBorder" type="text" id="recipeName" name="recipeName" required>
