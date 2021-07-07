@@ -1,26 +1,40 @@
 
+1. I draw the design of layout by Figma
 
-Draw Design of layout
-Tool: VS code, Git, GitHub
-Softwae: HTML, CSS, Bootstrap and Javascript
-Internet resource: Bootstrap, W3school
+Question: 
+    What is The Recipe App used for?
+    what will color be applied?
+    Do you happy with my drawing of the layout?
 
-1. Create a class that including of:
+    Tool: VS code, Git, GitHub
+    Softwae: HTML, CSS, Bootstrap and Javascript
+    Internet resource: Google, Bootstrap, W3school..
+
+2. Create a class that including of:
     - A empty array for store recipe object 
     - The array of object be converted to JSON string that will be stored in local storage
     - A CurrentId for tracking and control each recipe object
-    -  Add and delete recipe object 
+    - Add method and delete method for adding and deleting recipe object 
 
-2. For dispay in difference side of  device, i am going to use bootstrap contaniner and Boostrap flex.
+3. For dispay in difference side of devices, i am going to use Bootstrap contanine,r Bootstrap Grid,
+    and Boostrap Flex.
 
-3. Add a function Edit for each recipe
+4. Add a Edit function for each recipe
 
-4. Problem display edit modal on the top of meal modal so i search on the internet
-                .modal:nth-of-type(even) {
-                z-index: 1052 !important;
-                }
-                .modal-backdrop.show:nth-of-type(even) {
-                z-index: 1051 !important;
-                }
-                <button class="btn btn-outline-success editBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalAA" data-bs-dismiss="modal">Edit</button>
+5. Problems:
 
+        -How display edit Bootstrap Modal on the top of meal Bootstrap Modal so i search on the internet for       W3school.com
+            solution:  .modal:nth-of-type(even) {
+                        z-index: 1052 !important;
+                        }
+                        .modal-backdrop.show:nth-of-type(even) {
+                        z-index: 1051 !important;
+                        }
+                        or
+                        <button class="btn btn-outline-success editBtn" type="button" data-bs-toggle="modal" data-bs-target="#exampleModalAA" data-bs-dismiss="modal">Edit</button>
+
+        - How to make a variable that is declare inside of a function to be a globe variable
+            Solution:   go through again w3school.com about variable
+
+        - How to make recipe card always display the side 
+            solution: wait for next Recipe Maker version
