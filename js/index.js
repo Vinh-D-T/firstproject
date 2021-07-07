@@ -144,7 +144,7 @@ taskList01.addEventListener("click", (event) => {
             console.log(newObjectId); 
          }
         if (event.target.classList.contains("deleteBtn")) {
-            // Get the parent Task
+            // Get the parent task id
             const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
                 // Get the taskId of the parent Task.
             const taskId = Number(parentTask.dataset.taskId);
