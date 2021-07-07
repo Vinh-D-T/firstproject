@@ -78,7 +78,7 @@ function validFormInput (e) {
         errMsg4.innerHTML = "";
     }
     if (allPassed) {  
-        taskManager.addTask(recipeName.value, ingredient.value, mealType.value, description.value);
+        taskManager.addRecipe(recipeName.value, ingredient.value, mealType.value, description.value);
         taskManager.save();
         taskManager.render();
         clearFormInput();

@@ -23,65 +23,64 @@ const createTaskHTML = (Id, recipeName, ingredient, mealType, description) =>{
                 </li>`;
               return html;
 };
-
-// Declar TaskManager class
+// Declar RecipeManager class
 class RecipeManager{
     constructor(currentId = 0){
         this.tasks = [];
         this.currentId = currentId;
     }
-    // addTask method of TaskManager class
-    addTask(recipeName, ingredient, mealType, description) {
+    // addRecipe method of RecipeManager class
+    addRecipe(recipeName, ingredient, mealType, description) {
         const recipeObject = {
             objectId: this.currentId++,
             recipeName: recipeName,
             ingredient: ingredient,
             mealType: mealType,
             description: description,
-        };
-        this.tasks.push(recipeObject);
-        console.log(this.tasks)
-        return this.tasks;
+            };
+            this.tasks.push(recipeObject);
+            console.log(this.tasks)
+            return this.tasks;
      }; 
-    // End TaskManager lass
+   
     render (){
-        const recipeNameArray = [];
-        const ingredientArray = [];
-        const mealTimeArray = [];
+        const entreeArray = [];
+        const mainCourseArray = [];
+        const dessertArray = [];
         for (let i=0; i<this.tasks.length; i++){
             const task = this.tasks[i];
             const taskHtml = createTaskHTML (task.objectId, task.recipeName, task.ingredient, task.mealType, task.description);
                             
                   if(task.mealType === "Entree"){
                     //button.id.style.display="none";
-                    recipeNameArray.push(taskHtml);             
+                    entreeArray.push(taskHtml);             
                     } else if(task.mealType === "Main-Course") {
-                        ingredientArray.push(taskHtml);
+                      mainCourseArray.push(taskHtml);
                         } else if(task.mealType === "Dessert") {
-                            mealTimeArray.push(taskHtml);
+                          dessertArray.push(taskHtml);
                         }
-                                                 
-            const recipeNameHtml = recipeNameArray.join("\n");
-            const recipeNameList = document.querySelector("#task-list1");
-            const recipeNameList01 = document.querySelector("#task-list01");
-            recipeNameList.innerHTML = recipeNameHtml;
-            recipeNameList01.innerHTML = recipeNameHtml;
-            // add the TodoHtml to ingredientHtml
-            const ingredientHtml = ingredientArray.join("\n");
-            const ingredientList = document.querySelector("#task-list2");
-            const ingedientList02 = document.querySelector("#task-list02");
-            ingredientList.innerHTML = ingredientHtml;
-            ingedientList02.innerHTML = ingredientHtml;
-            //add the mealTimeHtml to mealTimeHTML
-            const mealTimeHtml = mealTimeArray.join("\n");
-            const mealTimeList = document.querySelector("#task-list3");
-            const mealTimeList03 = document.querySelector("#task-list03");
-            mealTimeList.innerHTML = mealTimeHtml;
-            mealTimeList03.innerHTML = mealTimeHtml;
+            // Add and display entreeArray to entreeList
+            const entreeHtml = entreeArray.join("\n");
+            const entreeList = document.querySelector("#task-list1");
+            const entreeList01 = document.querySelector("#task-list01");
+            entreeList.innerHTML = entreeHtml;
+            entreeList01.innerHTML = entreeHtml;
+            // Add and display mainCourseArray to mainCourseList
+            const mainCourseHtml = mainCourseArray.join("\n");
+            const mainCourseList = document.querySelector("#task-list2");
+            const mainCourseList02 = document.querySelector("#task-list02");
+            mainCourseList.innerHTML = mainCourseHtml;
+            mainCourseList02.innerHTML = mainCourseHtml;
+            // Add and display DesertArray to DesertList
+            const dessertHtml = dessertArray.join("\n");
+            const dessertList = document.querySelector("#task-list3");
+            const dessertList03 = document.querySelector("#task-list03");
+            dessertList.innerHTML = dessertHtml;
+            dessertList03.innerHTML = dessertHtml;
             
-    };    
-             
+    };               
 };
+    // Method that help to track the recipe object by its Id
     getTaskById(taskId){
         let foundTask;
         for(let i=0; i<this.tasks.length; i++) {
@@ -92,7 +91,6 @@ class RecipeManager{
         }
         return foundTask;   
     };
-    
     save() {
         // Create a JSON string of the tasks
         const tasksJson = JSON.stringify(this.tasks);
@@ -112,7 +110,6 @@ class RecipeManager{
         // Convert it to an array and store it in our TaskManager
           this.tasks = JSON.parse(tasksJson);
         }
-    
         // Check if the currentId is saved in localStorage
         if (localStorage.getItem("currentId")) {
           // Get the currentId string in localStorage
