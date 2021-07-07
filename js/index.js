@@ -1,7 +1,7 @@
 const taskManager = new RecipeManager(0);
 taskManager.load();
 taskManager.render();
-
+//Get id of input element and stored it in a new declare variables
 let recipeName = document.querySelector("#recipeName");
 let ingredient = document.querySelector("#ingredient");
 let mealType = document.querySelector("#mealType");
@@ -11,10 +11,12 @@ let errMsg2 = document.querySelector("#errMsg2");
 let errMsg3 = document.querySelector("#errMsg3");
 let errMsg4 = document.querySelector("#errMsg4");
 let addBtn = document.querySelector("#addBtn");
+//Assign addEventListener to Add button
 addBtn.addEventListener("click", validFormInput );
-
+//Create validate funtion
 function validFormInput (e) {
-    var allPassed = true;    
+    var allPassed = true; 
+    //Validate Recipe Name input   
     if(recipeName.value.trim() == "" || recipeName.value.length < 5){
         errMsg1.innerHTML = "Must be greater than 5 characters";
         document.querySelector("#errMsg1").style.color = "#ff0000";
@@ -27,6 +29,7 @@ function validFormInput (e) {
                 recipeName.style.borderColor = "green";
                 // allPassed = true;
             }
+      //Validate ingredient input      
     if(ingredient.value.trim() == "" || ingredient.value.length < 5){
         errMsg2.innerHTML = "Must be greater than 5 characters"
         document.querySelector("#errMsg2").style.color = "#ff0000"
@@ -39,6 +42,7 @@ function validFormInput (e) {
                 ingredient.style.borderColor = "green";
                 // allPassed = true;
             }
+      //Validate Meal type input       
     if(mealType.value.trim() == "" || mealType.value.length < 2){
         errMsg3.innerHTML = "Please select meal time";
         document.querySelector("#errMsg3").style.color = "#ff0000"
@@ -51,6 +55,7 @@ function validFormInput (e) {
                 mealType.style.borderColor = "green";
                 // allPassed = true;
             }
+    //Validate description input      
     if(description.value.trim() == "" || description.value.length < 5){
        errMsg4.innerHTML = "The Task Title must be greater than 5 characters"
         document.querySelector("#errMsg4").style.color = "#ff0000"
@@ -62,7 +67,8 @@ function validFormInput (e) {
                 errMsg4.style.color = "green";
                 description.style.borderColor = "green";
                 // allPassed = true;
-            }                            
+            }  
+     //create clear form function                                 
     const clearFormInput = () => {
         recipeName.value="";
         recipeName.style.borderColor = "grey"
@@ -78,6 +84,7 @@ function validFormInput (e) {
         errMsg4.innerHTML = "";
     }
     if (allPassed) {  
+        //call method Add recipe
         taskManager.addRecipe(recipeName.value, ingredient.value, mealType.value, description.value);
         taskManager.save();
         taskManager.render();
