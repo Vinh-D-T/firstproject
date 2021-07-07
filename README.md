@@ -21,7 +21,7 @@ Question:
 3. For dispay in difference side of devices, i am going to use Bootstrap contanine,r Bootstrap Grid,
     and Boostrap Flex.
 
-4. Add a Edit function for each recipe
+4. Add a Edit function that help user can edit individual recipe
 
 5. Problems:
 
