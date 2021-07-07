@@ -11,10 +11,12 @@ Question:
     Internet resource: Google, Bootstrap, W3school..
 
 2. Create a class that including of:
-    - A empty array for store recipe object 
-    - The array of object be converted to JSON string that will be stored in local storage
+    - A empty taskArray for store recipe object 
+    - The taskArray of object be converted to JSON string that will be stored in local storage
     - A CurrentId for tracking and control each recipe object
     - Add method and delete method for adding and deleting recipe object 
+    - Save method and Load method for saving to and loading from of the data with local storage
+    - GetTaskById method is used for getting individual recipe object from the taskArray
 
 3. For dispay in difference side of devices, i am going to use Bootstrap contanine,r Bootstrap Grid,
     and Boostrap Flex.
