@@ -60,9 +60,7 @@ class RecipeManager{
                         } else if(task.mealType === "Dessert") {
                             mealTimeArray.push(taskHtml);
                         }
-                        // else {
-                        //     console.error('You made a mistake');
-                        // }                          
+                                                 
             const recipeNameHtml = recipeNameArray.join("\n");
             const recipeNameList = document.querySelector("#task-list1");
             const recipeNameList01 = document.querySelector("#task-list01");
