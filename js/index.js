@@ -1,5 +1,3 @@
-
-
 const taskManager = new RecipeManager(0);
 taskManager.load();
 taskManager.render();
@@ -16,8 +14,7 @@ let addBtn = document.querySelector("#addBtn");
 addBtn.addEventListener("click", validFormInput );
 
 function validFormInput (e) {
-    var allPassed = true;
-        
+    var allPassed = true;    
     if(recipeName.value.trim() == "" || recipeName.value.length < 5){
         errMsg1.innerHTML = "Must be greater than 5 characters";
         document.querySelector("#errMsg1").style.color = "#ff0000";
@@ -66,7 +63,6 @@ function validFormInput (e) {
                 description.style.borderColor = "green";
                 // allPassed = true;
             }                            
-            
     const clearFormInput = () => {
         recipeName.value="";
         recipeName.style.borderColor = "grey"
@@ -81,8 +77,7 @@ function validFormInput (e) {
         errMsg3.innerHTML = "";
         errMsg4.innerHTML = "";
     }
-    if (allPassed) {
-          
+    if (allPassed) {  
         taskManager.addTask(recipeName.value, ingredient.value, mealType.value, description.value);
         taskManager.save();
         taskManager.render();
@@ -99,8 +94,7 @@ function edit() {
     taskA.mealType = mealTypeEdit.value;
     taskA.description = descriptionEdit.value;
     taskManager.save();
-    taskManager.render();
-    
+    taskManager.render();   
 }   
 const taskList01 = document.querySelector("#task-list01");
 taskList01.addEventListener("click", (event) => {
@@ -142,8 +136,7 @@ taskList01.addEventListener("click", (event) => {
             newObjectId = taskA.objectId;  
             console.log(newObjectId); 
          }
-        
-         if (event.target.classList.contains("deleteBtn")) {
+        if (event.target.classList.contains("deleteBtn")) {
             // Get the parent Task
             const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
                 // Get the taskId of the parent Task.
@@ -168,11 +161,8 @@ taskList01.addEventListener("click", (event) => {
                 mealTypeEdit.value = taskA.mealType;
                 descriptionEdit.value = taskA.description;
                 newObjectId = taskA.objectId;
-                // taskA.Status = "Done";       
-                // taskManager.save();
-                // taskManager.render();
-            }
-             if (event.target.classList.contains("deleteBtn")) {
+               }
+            if (event.target.classList.contains("deleteBtn")) {
                 // Get the parent Task
                 const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
                     // Get the taskId of the parent Task.
@@ -198,11 +188,8 @@ taskList1.addEventListener("click",(event) => {
         mealTypeEdit.value = taskA.mealType;
         descriptionEdit.value = taskA.description;
         newObjectId = taskA.objectId;
-        
-    
-     }
-    
-     if (event.target.classList.contains("deleteBtn")) {
+        }
+    if (event.target.classList.contains("deleteBtn")) {
         // Get the parent Task
         const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
             // Get the taskId of the parent Task.
@@ -226,10 +213,8 @@ taskList1.addEventListener("click",(event) => {
             ingredientEdit.value = taskA.ingredient;
             mealTypeEdit.value = taskA.mealType;
             descriptionEdit.value = taskA.description;
-            
-         }
-        
-         if (event.target.classList.contains("deleteBtn")) {
+            }
+        if (event.target.classList.contains("deleteBtn")) {
             // Get the parent Task
             const parentTask =
               event.target.parentElement.parentElement.parentElement.parentElement;
@@ -246,7 +231,7 @@ taskList1.addEventListener("click",(event) => {
         });
         const taskList3 = document.querySelector("#task-list3");
         taskList3.addEventListener("click",(event) => {
-            if (event.target.classList.contains("editBtn")){
+        if (event.target.classList.contains("editBtn")){
                 const parentTask = event.target.parentElement.parentElement.parentElement.parentElement;
                 const taskId = Number(parentTask.dataset.taskId);
                 taskA = taskManager.getTaskById(taskId);
@@ -255,11 +240,8 @@ taskList1.addEventListener("click",(event) => {
                 mealTypeEdit.value = taskA.mealType;
                 descriptionEdit.value = taskA.description;
                 newObjectId = taskA.objectId;
-                // taskA.Status = "Done";       
-                // taskManager.save();
-                // taskManager.render();
             }
-             if (event.target.classList.contains("deleteBtn")) {
+        if (event.target.classList.contains("deleteBtn")) {
                 // Get the parent Task
                 const parentTask =
                   event.target.parentElement.parentElement.parentElement.parentElement;
@@ -272,20 +254,9 @@ taskList1.addEventListener("click",(event) => {
                     taskManager.save();
                     // Render the tasks
                     taskManager.render();
-              }
-            });
+            }
+        });
         
-// function edit(){
-//     if(newObjectId) {
-//         const taskId = Number(newObjectId);
-//         const taskB = taskManager.getTaskById(taskId);
-//         taskB.recipeName = recipeNameEdit.value;
-//         taskB.ingredient = ingredientEdit.value;
-//         taskB.mealType = mealTypeEdit.value;
-//         taskB.description = descriptionEdit;  
-//     } else {
-//         console.log("you made a mistake");
-//     }
-// }
+
 
  
